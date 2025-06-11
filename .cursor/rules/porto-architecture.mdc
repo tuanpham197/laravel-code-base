@@ -1,0 +1,60 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Porto Architectural Pattern
+
+This project follows the **Porto** architecture pattern with Laravel 11 and PHP 8.2. Porto is a modern software architectural pattern that organizes code for high maintainability and scalability.
+
+## Core Concepts
+
+### Containers and Ship Layers
+
+- **Containers**: Encapsulate business logic for specific domains
+  - Located in `app/Containers/{ContainerName}`
+  - Each container is a self-contained module
+
+- **Ship**: Houses infrastructure code and shared utilities
+  - Located in `app/Ship`
+  - Contains code that serves all Containers
+
+### Container Structure
+
+Each Container follows this structure:
+- **Actions**: Orchestrate business logic, each with a single responsibility
+- **Tasks**: Atomic units of business logic, each with a single public `run()` method
+- **Models**: Database entities
+- **Data**: DTOs, Factories, Repositories, Criterias, etc.
+- **UI**: APIs, Web endpoints, CLI commands
+
+## Coding Standards
+
+- **PHP 8.2**: Utilizes latest PHP features like enums, constructor property promotion
+- **PSR Standards**: Follows PHP Standards Recommendations
+- **Single Responsibility**: Each class has only one reason to change
+- **Type Declarations**: Use strict typing and return type declarations
+
+## Example Patterns
+
+### Tasks
+- Tasks handle atomic business operations
+- Always have a single public `run()` method
+- Use method chaining setters for dependencies
+- Example: `app/Containers/Customer/Tasks/GetDividendAmountForIbondTask.php`
+
+### Enums
+- Use PHP 8.1+ enums for type-safe constants
+- Example: `App\Containers\Customer\Enums\InheritanceStatusEnum`
+
+### Carbon Dates
+- Use Carbon for all date manipulations
+- Always specify timezone with `new \DateTimeZone('Asia/Tokyo')` for consistency
+
+## File Naming Conventions
+
+- **Controllers**: `{Name}Controller.php`
+- **Actions**: `{Action}Action.php` (e.g., `CreateUserAction.php`)
+- **Tasks**: `{Task}Task.php` (e.g., `GetDividendAmountForIbondTask.php`)
+- **Models**: `{Model}.php` (e.g., `User.php`)
+- **Enums**: `{Name}Enum.php` (e.g., `InheritanceStatusEnum.php`)

@@ -1,0 +1,56 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Laravel 11 Conventions
+
+This project uses Laravel 11 with PHP 8.2 following the Porto architectural pattern. These conventions help maintain consistency across the codebase.
+
+## Framework Structure
+
+- **Laravel 11**: Follows the latest Laravel framework practices
+- **Directory Structure**: Modified to accommodate Porto's architecture
+- **Service Provider Registration**: Container components are registered through service providers
+
+## Laravel Features
+
+### Eloquent Models
+- Models follow Laravel Eloquent ORM patterns
+- Use type-safe properties and relationships
+- Example location: `app/Containers/{ContainerName}/Models/`
+
+### Controllers
+- Follow single action controller pattern where possible
+- Minimal logic, primarily delegating to Actions
+- Example location: `app/Containers/{ContainerName}/UI/{Interface}/Controllers/`
+
+### Middleware
+- Container-specific middleware: `app/Containers/{ContainerName}/UI/Middleware/`
+- Global middleware: `app/Ship/Middleware/`
+
+### Routes
+- API routes: `app/Containers/{ContainerName}/UI/API/Routes/`
+- Web routes: `app/Containers/{ContainerName}/UI/WEB/Routes/`
+
+### Validation
+- Form requests for validation: `app/Containers/{ContainerName}/UI/{Interface}/Requests/`
+- Follow Laravel's validation standards
+
+## Carbon Date Handling
+
+- Use Carbon for all date manipulations
+- Configure timezone consistently with `new \DateTimeZone('Asia/Tokyo')`
+- Example: `Carbon::parse($date, new \DateTimeZone('Asia/Tokyo'))->startOfDay()`
+
+## Database Practices
+
+- Migrations: `app/Containers/{ContainerName}/Data/Migrations/`
+- Seeders: `app/Containers/{ContainerName}/Data/Seeders/`
+- Factories: `app/Containers/{ContainerName}/Data/Factories/`
+
+## Configuration
+
+- Environment-specific configurations in `.env`
+- Container-specific configs in `app/Containers/{ContainerName}/Configs/`
+- Ship-wide configs in `app/Ship/Configs/`

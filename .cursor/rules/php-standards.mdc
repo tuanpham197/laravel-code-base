@@ -1,0 +1,76 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# PHP 8.2 Standards and PSR Recommendations
+
+This project follows PHP 8.2 standards and PSR (PHP Standards Recommendations) to maintain code quality and consistency.
+
+## PHP 8.2 Features
+
+- **First-class callable syntax**: `$callable = SomeClass::method(...)`
+- **Readonly classes**: `readonly class User { ... }`
+- **Disjunctive Normal Form Types**: `(A&B)|C` type expressions
+- **Constants in traits**
+- **Null, false, and true as standalone types**
+
+## Type Declarations
+
+- Use strict typing in all files: `declare(strict_types=1);`
+- Always use return types: `public function run(): array`
+- Use nullable types when appropriate: `?string`
+- Use union types for multiple return types: `string|int|null`
+- Use typed properties: `private int $count = 0;`
+
+## PSR Standards
+
+### PSR-1: Basic Coding Standard
+- PHP files MUST use only `<?php` or `<?=` tags
+- Files MUST use only UTF-8 without BOM
+- Namespaces and classes MUST follow PSR-4
+- Class names MUST be declared in `PascalCase`
+- Constants MUST be declared in `UPPER_CASE`
+- Method names MUST be declared in `camelCase`
+
+### PSR-4: Autoloading Standard
+- Follows Laravel's implementation of PSR-4
+- Namespace mapping in `composer.json`
+- Example: `"App\\": "app/"`
+
+### PSR-12: Extended Coding Style
+- 4 spaces for indentation
+- Line length preferably kept under 120 characters
+- Opening braces for classes on the same line
+- Opening braces for methods on the same line
+- Visibility MUST be declared on all properties and methods
+
+## Best Practices
+
+- **SOLID Principles**: Especially Single Responsibility
+- **DRY**: Don't Repeat Yourself
+- **Immutability**: Prefer immutable objects where possible
+- **Dependency Injection**: Use constructor injection
+- **Method Chaining**: For fluent interfaces and builders
+
+## Error Handling
+
+- Use typed exceptions
+- Prefer custom exceptions for domain errors
+- Use try/catch blocks appropriately
+- Log exceptions properly
+
+## Comments and Documentation
+
+- Use DocBlocks for classes and methods
+- Always document parameters, return types, and exceptions
+- Example:
+```php
+/**
+ * Calculate the dividend amount.
+ *
+ * @param string $date Start date for calculation
+ * @return array<int, array<string, mixed>> Dividend calculation results
+ * @throws InvalidArgumentException When the date format is invalid
+ */
+```

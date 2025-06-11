@@ -1,0 +1,110 @@
+name: Code Quality
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
+    branches:
+      - develop
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    name: Code Quality Check
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          tools: composer:v2
+          coverage: none
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: composer-
+
+      - name: Install Dependencies
+        run: |
+          composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+          npm install
+
+      - name: Cache Rector
+        uses: actions/cache@v4
+        with:
+          path: /tmp/rector
+          key: rector-${{ hashFiles('rector.php') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: rector-
+
+      # PHP Code Quality Checks
+      - name: Run Rector Check
+        run: |
+          vendor/bin/rector process --dry-run
+
+      - name: Run Pint Check
+        run: vendor/bin/pint --test
+
+      # - name: Run PHPStan
+      #   run: vendor/bin/phpstan analyse --error-format=github
+
+      # Frontend Code Quality Checks
+      - name: Format Frontend
+        run: npm run format
+
+      - name: Lint Frontend
+        run: npm run lint
+
+      # Auto-fix on push to main/develop (optional)
+      # - name: Run Rector Fix
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+      #   run: vendor/bin/rector process
+
+      # - name: Run Pint Fix
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+      #   run: vendor/bin/pint
+
+      # - name: Commit Changes
+      #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+      #   uses: stefanzweifel/git-auto-commit-action@v5
+      #   with:
+      #     commit_message: '🤖 Fix code style and apply refactoring'
+      #     commit_options: '--no-verify'
+
+      # Discord notification on quality check failure
+      - name: Discord notification on quality failure
+        if: failure()
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: |
+            ❌ **Code Quality Check Failed** ❌
+            
+            **Repository:** ${{ github.repository }}
+            **Branch:** ${{ github.ref_name }}
+            **Commit:** ${{ github.sha }}
+            **Author:** ${{ github.actor }}
+            **Workflow:** Code Quality
+            
+            **Failed Checks:** One or more of: Rector, Pint, PHPStan, or Frontend linting
+            **Action:** Run `composer quality:fix` locally and commit the changes
+            
+            **View Details:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} 
