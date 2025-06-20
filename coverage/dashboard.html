@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /Users/kozokozo/personal/code-base/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/Users/kozokozo/personal/code-base/app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Containers/Authentication/Actions/LoginAction.php.html#13">App\Containers\Authentication\Actions\LoginAction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Authentication/Actions/RegisterAction.php.html#12">App\Containers\Authentication\Actions\RegisterAction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Actions/CreateFamilyGroupAction.php.html#12">App\Containers\Family\Actions\CreateFamilyGroupAction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/FamilyGroup.php.html#13">App\Containers\Family\Models\FamilyGroup</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/FamilyMember.php.html#12">App\Containers\Family\Models\FamilyMember</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/Invitation.php.html#12">App\Containers\Family\Models\Invitation</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/UserFamilyRole.php.html#11">App\Containers\Family\Models\UserFamilyRole</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Tasks/CreateFamilyMemberTask.php.html#13">App\Containers\Family\Tasks\CreateFamilyMemberTask</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/UI/API/Controllers/FamilyGroupController.php.html#12">App\Containers\Family\UI\API\Controllers\FamilyGroupController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/UI/API/Requests/CreateFamilyGroupRequest.php.html#9">App\Containers\Family\UI\API\Requests\CreateFamilyGroupRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Account.php.html#15">App\Containers\Finance\Models\Account</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Asset.php.html#14">App\Containers\Finance\Models\Asset</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Budget.php.html#14">App\Containers\Finance\Models\Budget</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Category.php.html#15">App\Containers\Finance\Models\Category</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/FinancialUser.php.html#8">App\Containers\Finance\Models\FinancialUser</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/RecurringExpense.php.html#15">App\Containers\Finance\Models\RecurringExpense</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/SavingsGoal.php.html#14">App\Containers\Finance\Models\SavingsGoal</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Transaction.php.html#14">App\Containers\Finance\Models\Transaction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/CreateTodoAction.php.html#17">App\Containers\Todo\Actions\CreateTodoAction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/GetAllTodosAction.php.html#17">App\Containers\Todo\Actions\GetAllTodosAction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/GetUserTodosAction.php.html#12">App\Containers\Todo\Actions\GetUserTodosAction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/ToggleTodoStatusAction.php.html#17">App\Containers\Todo\Actions\ToggleTodoStatusAction</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Data/Factories/TodoFactory.php.html#16">App\Containers\Todo\Data\Factories\TodoFactory</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Models/Todo.php.html#25">App\Containers\Todo\Models\Todo</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/CreateTodoTask.php.html#17">App\Containers\Todo\Tasks\CreateTodoTask</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/GetAllTodosTask.php.html#17">App\Containers\Todo\Tasks\GetAllTodosTask</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/GetUserTodosTask.php.html#12">App\Containers\Todo\Tasks\GetUserTodosTask</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/ToggleTodoStatusTask.php.html#16">App\Containers\Todo\Tasks\ToggleTodoStatusTask</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Controllers/TodoController.php.html#21">App\Containers\Todo\UI\API\Controllers\TodoController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Requests/CreateTodoRequest.php.html#14">App\Containers\Todo\UI\API\Requests\CreateTodoRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#12">App\Http\Requests\Auth\LoginRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Settings/ProfileUpdateRequest.php.html#9">App\Http\Requests\Settings\ProfileUpdateRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Exceptions/CreateResourceFailedException.php.html#14">App\Ship\Exceptions\CreateResourceFailedException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Exceptions/NotFoundException.php.html#14">App\Ship\Exceptions\NotFoundException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Actions/Action.php.html#13">App\Ship\Parents\Actions\Action</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Controllers/ApiController.php.html#17">App\Ship\Parents\Controllers\ApiController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#13">App\Ship\Parents\Models\AbstractUser</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#10">App\Ship\Parents\Models\UserProfileModel</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Providers/ShipServiceProvider.php.html#11">App\Ship\Providers\ShipServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Providers/UserServiceProvider.php.html#11">App\Ship\Providers\UserServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Enums/FamilyMemberRoleEnum.php.html#7">App\Containers\Family\Enums\FamilyMemberRoleEnum</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Enums/TodoStatusEnum.php.html#12">App\Containers\Todo\Enums\TodoStatusEnum</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#12">App\Containers\Todo\Traits\HasTodosTrait</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/PropertyFillable.php.html#12">App\Traits\PropertyFillable</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/UnsetPropertiesHandle.php.html#9">App\Traits\UnsetPropertiesHandle</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Controllers/AuthController.php.html#22">App\Containers\Authentication\UI\WEB\Controllers\AuthController</a></td><td class="text-right">52%</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Requests/LoginRequest.php.html#12">App\Containers\Authentication\UI\WEB\Requests\LoginRequest</a></td><td class="text-right">52%</td></tr>
+       <tr><td><a href="Models/User.php.html#13">App\Models\User</a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Http/Middleware/HandleInertiaRequests.php.html#10">App\Http\Middleware\HandleInertiaRequests</a></td><td class="text-right">82%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Containers/Family/Enums/FamilyMemberRoleEnum.php.html#7">App\Containers\Family\Enums\FamilyMemberRoleEnum</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#12">App\Containers\Todo\Traits\HasTodosTrait</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Traits/PropertyFillable.php.html#12">App\Traits\PropertyFillable</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#12">App\Http\Requests\Auth\LoginRequest</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Containers/Todo/Enums/TodoStatusEnum.php.html#12">App\Containers\Todo\Enums\TodoStatusEnum</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Controllers/TodoController.php.html#21">App\Containers\Todo\UI\API\Controllers\TodoController</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Controllers/AuthController.php.html#22">App\Containers\Authentication\UI\WEB\Controllers\AuthController</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Traits/UnsetPropertiesHandle.php.html#9">App\Traits\UnsetPropertiesHandle</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Containers/Authentication/Actions/LoginAction.php.html#13">App\Containers\Authentication\Actions\LoginAction</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/GetAllTodosAction.php.html#17">App\Containers\Todo\Actions\GetAllTodosAction</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/GetAllTodosTask.php.html#17">App\Containers\Todo\Tasks\GetAllTodosTask</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/ToggleTodoStatusTask.php.html#16">App\Containers\Todo\Tasks\ToggleTodoStatusTask</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Requests/LoginRequest.php.html#12">App\Containers\Authentication\UI\WEB\Requests\LoginRequest</a></td><td class="text-right">9</td></tr>
+       <tr><td><a href="Http/Middleware/HandleInertiaRequests.php.html#10">App\Http\Middleware\HandleInertiaRequests</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Containers/Family/Tasks/CreateFamilyMemberTask.php.html#13">App\Containers\Family\Tasks\CreateFamilyMemberTask</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/CreateTodoTask.php.html#17">App\Containers\Todo\Tasks\CreateTodoTask</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Containers/Authentication/Actions/LoginAction.php.html#21"><abbr title="App\Containers\Authentication\Actions\LoginAction::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Authentication/Actions/RegisterAction.php.html#21"><abbr title="App\Containers\Authentication\Actions\RegisterAction::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Controllers/AuthController.php.html#98"><abbr title="App\Containers\Authentication\UI\WEB\Controllers\AuthController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Requests/LoginRequest.php.html#48"><abbr title="App\Containers\Authentication\UI\WEB\Requests\LoginRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Actions/CreateFamilyGroupAction.php.html#19"><abbr title="App\Containers\Family\Actions\CreateFamilyGroupAction::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/FamilyGroup.php.html#30"><abbr title="App\Containers\Family\Models\FamilyGroup::members">members</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/FamilyGroup.php.html#35"><abbr title="App\Containers\Family\Models\FamilyGroup::invitations">invitations</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/FamilyGroup.php.html#40"><abbr title="App\Containers\Family\Models\FamilyGroup::users">users</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/FamilyMember.php.html#30"><abbr title="App\Containers\Family\Models\FamilyMember::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/FamilyMember.php.html#35"><abbr title="App\Containers\Family\Models\FamilyMember::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/Invitation.php.html#32"><abbr title="App\Containers\Family\Models\Invitation::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/Invitation.php.html#37"><abbr title="App\Containers\Family\Models\Invitation::invitedBy">invitedBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/UserFamilyRole.php.html#30"><abbr title="App\Containers\Family\Models\UserFamilyRole::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Models/UserFamilyRole.php.html#38"><abbr title="App\Containers\Family\Models\UserFamilyRole::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Tasks/CreateFamilyMemberTask.php.html#23"><abbr title="App\Containers\Family\Tasks\CreateFamilyMemberTask::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/UI/API/Controllers/FamilyGroupController.php.html#14"><abbr title="App\Containers\Family\UI\API\Controllers\FamilyGroupController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/UI/API/Controllers/FamilyGroupController.php.html#21"><abbr title="App\Containers\Family\UI\API\Controllers\FamilyGroupController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/UI/API/Requests/CreateFamilyGroupRequest.php.html#14"><abbr title="App\Containers\Family\UI\API\Requests\CreateFamilyGroupRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/UI/API/Requests/CreateFamilyGroupRequest.php.html#24"><abbr title="App\Containers\Family\UI\API\Requests\CreateFamilyGroupRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Account.php.html#22"><abbr title="App\Containers\Finance\Models\Account::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Account.php.html#45"><abbr title="App\Containers\Finance\Models\Account::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Account.php.html#50"><abbr title="App\Containers\Finance\Models\Account::createdBy">createdBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Account.php.html#55"><abbr title="App\Containers\Finance\Models\Account::transactions">transactions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Account.php.html#60"><abbr title="App\Containers\Finance\Models\Account::recurringExpenses">recurringExpenses</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Asset.php.html#21"><abbr title="App\Containers\Finance\Models\Asset::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Asset.php.html#44"><abbr title="App\Containers\Finance\Models\Asset::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Asset.php.html#49"><abbr title="App\Containers\Finance\Models\Asset::createdBy">createdBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Budget.php.html#21"><abbr title="App\Containers\Finance\Models\Budget::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Budget.php.html#49"><abbr title="App\Containers\Finance\Models\Budget::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Budget.php.html#54"><abbr title="App\Containers\Finance\Models\Budget::category">category</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Category.php.html#22"><abbr title="App\Containers\Finance\Models\Category::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Category.php.html#42"><abbr title="App\Containers\Finance\Models\Category::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Category.php.html#47"><abbr title="App\Containers\Finance\Models\Category::parent">parent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Category.php.html#52"><abbr title="App\Containers\Finance\Models\Category::children">children</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Category.php.html#57"><abbr title="App\Containers\Finance\Models\Category::transactions">transactions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Category.php.html#62"><abbr title="App\Containers\Finance\Models\Category::budgets">budgets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Category.php.html#67"><abbr title="App\Containers\Finance\Models\Category::createdBy">createdBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/FinancialUser.php.html#15"><abbr title="App\Containers\Finance\Models\FinancialUser::getFinancialProfile">getFinancialProfile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/RecurringExpense.php.html#22"><abbr title="App\Containers\Finance\Models\RecurringExpense::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/RecurringExpense.php.html#49"><abbr title="App\Containers\Finance\Models\RecurringExpense::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/RecurringExpense.php.html#54"><abbr title="App\Containers\Finance\Models\RecurringExpense::account">account</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/RecurringExpense.php.html#59"><abbr title="App\Containers\Finance\Models\RecurringExpense::category">category</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/RecurringExpense.php.html#64"><abbr title="App\Containers\Finance\Models\RecurringExpense::transactions">transactions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/RecurringExpense.php.html#69"><abbr title="App\Containers\Finance\Models\RecurringExpense::createdBy">createdBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/SavingsGoal.php.html#21"><abbr title="App\Containers\Finance\Models\SavingsGoal::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/SavingsGoal.php.html#45"><abbr title="App\Containers\Finance\Models\SavingsGoal::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/SavingsGoal.php.html#50"><abbr title="App\Containers\Finance\Models\SavingsGoal::account">account</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/SavingsGoal.php.html#55"><abbr title="App\Containers\Finance\Models\SavingsGoal::createdBy">createdBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Transaction.php.html#21"><abbr title="App\Containers\Finance\Models\Transaction::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Transaction.php.html#45"><abbr title="App\Containers\Finance\Models\Transaction::familyGroup">familyGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Transaction.php.html#50"><abbr title="App\Containers\Finance\Models\Transaction::account">account</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Transaction.php.html#55"><abbr title="App\Containers\Finance\Models\Transaction::category">category</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Transaction.php.html#60"><abbr title="App\Containers\Finance\Models\Transaction::createdBy">createdBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Finance/Models/Transaction.php.html#65"><abbr title="App\Containers\Finance\Models\Transaction::recurringExpense">recurringExpense</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/CreateTodoAction.php.html#23"><abbr title="App\Containers\Todo\Actions\CreateTodoAction::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/CreateTodoAction.php.html#33"><abbr title="App\Containers\Todo\Actions\CreateTodoAction::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/GetAllTodosAction.php.html#19"><abbr title="App\Containers\Todo\Actions\GetAllTodosAction::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/GetAllTodosAction.php.html#28"><abbr title="App\Containers\Todo\Actions\GetAllTodosAction::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/GetUserTodosAction.php.html#14"><abbr title="App\Containers\Todo\Actions\GetUserTodosAction::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/GetUserTodosAction.php.html#19"><abbr title="App\Containers\Todo\Actions\GetUserTodosAction::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/ToggleTodoStatusAction.php.html#23"><abbr title="App\Containers\Todo\Actions\ToggleTodoStatusAction::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/ToggleTodoStatusAction.php.html#30"><abbr title="App\Containers\Todo\Actions\ToggleTodoStatusAction::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Data/Factories/TodoFactory.php.html#25"><abbr title="App\Containers\Todo\Data\Factories\TodoFactory::definition">definition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Data/Factories/TodoFactory.php.html#38"><abbr title="App\Containers\Todo\Data\Factories\TodoFactory::completed">completed</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Data/Factories/TodoFactory.php.html#49"><abbr title="App\Containers\Todo\Data\Factories\TodoFactory::incomplete">incomplete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Data/Factories/TodoFactory.php.html#60"><abbr title="App\Containers\Todo\Data\Factories\TodoFactory::cancelled">cancelled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Models/Todo.php.html#32"><abbr title="App\Containers\Todo\Models\Todo::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Models/Todo.php.html#54"><abbr title="App\Containers\Todo\Models\Todo::markAsCompleted">markAsCompleted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Models/Todo.php.html#65"><abbr title="App\Containers\Todo\Models\Todo::markAsIncomplete">markAsIncomplete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Models/Todo.php.html#76"><abbr title="App\Containers\Todo\Models\Todo::markAsCancelled">markAsCancelled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Models/Todo.php.html#87"><abbr title="App\Containers\Todo\Models\Todo::scopeCompleted">scopeCompleted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Models/Todo.php.html#95"><abbr title="App\Containers\Todo\Models\Todo::scopeIncomplete">scopeIncomplete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Models/Todo.php.html#103"><abbr title="App\Containers\Todo\Models\Todo::scopeCancelled">scopeCancelled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/CreateTodoTask.php.html#26"><abbr title="App\Containers\Todo\Tasks\CreateTodoTask::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/GetAllTodosTask.php.html#24"><abbr title="App\Containers\Todo\Tasks\GetAllTodosTask::filterByStatus">filterByStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/GetAllTodosTask.php.html#36"><abbr title="App\Containers\Todo\Tasks\GetAllTodosTask::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/GetUserTodosTask.php.html#14"><abbr title="App\Containers\Todo\Tasks\GetUserTodosTask::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/GetUserTodosTask.php.html#22"><abbr title="App\Containers\Todo\Tasks\GetUserTodosTask::runWithEmail">runWithEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/ToggleTodoStatusTask.php.html#23"><abbr title="App\Containers\Todo\Tasks\ToggleTodoStatusTask::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Controllers/TodoController.php.html#23"><abbr title="App\Containers\Todo\UI\API\Controllers\TodoController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Controllers/TodoController.php.html#32"><abbr title="App\Containers\Todo\UI\API\Controllers\TodoController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Controllers/TodoController.php.html#45"><abbr title="App\Containers\Todo\UI\API\Controllers\TodoController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Controllers/TodoController.php.html#59"><abbr title="App\Containers\Todo\UI\API\Controllers\TodoController::toggle">toggle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Requests/CreateTodoRequest.php.html#19"><abbr title="App\Containers\Todo\UI\API\Requests\CreateTodoRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Requests/CreateTodoRequest.php.html#29"><abbr title="App\Containers\Todo\UI\API\Requests\CreateTodoRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Requests/CreateTodoRequest.php.html#42"><abbr title="App\Containers\Todo\UI\API\Requests\CreateTodoRequest::messages">messages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#17"><abbr title="App\Http\Requests\Auth\LoginRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#27"><abbr title="App\Http\Requests\Auth\LoginRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#40"><abbr title="App\Http\Requests\Auth\LoginRequest::authenticate">authenticate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#60"><abbr title="App\Http\Requests\Auth\LoginRequest::ensureIsNotRateLimited">ensureIsNotRateLimited</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#81"><abbr title="App\Http\Requests\Auth\LoginRequest::throttleKey">throttleKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Settings/ProfileUpdateRequest.php.html#16"><abbr title="App\Http\Requests\Settings\ProfileUpdateRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/User.php.html#55"><abbr title="App\Models\User::familyRoles">familyRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Exceptions/CreateResourceFailedException.php.html#16"><abbr title="App\Ship\Exceptions\CreateResourceFailedException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Exceptions/NotFoundException.php.html#16"><abbr title="App\Ship\Exceptions\NotFoundException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Actions/Action.php.html#18"><abbr title="App\Ship\Parents\Actions\Action::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Controllers/ApiController.php.html#27"><abbr title="App\Ship\Parents\Controllers\ApiController::success">success</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Controllers/ApiController.php.html#41"><abbr title="App\Ship\Parents\Controllers\ApiController::created">created</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Controllers/ApiController.php.html#51"><abbr title="App\Ship\Parents\Controllers\ApiController::error">error</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Controllers/ApiController.php.html#63"><abbr title="App\Ship\Parents\Controllers\ApiController::notFound">notFound</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#37"><abbr title="App\Ship\Parents\Models\AbstractUser::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#42"><abbr title="App\Ship\Parents\Models\AbstractUser::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#47"><abbr title="App\Ship\Parents\Models\AbstractUser::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#52"><abbr title="App\Ship\Parents\Models\AbstractUser::getAvatar">getAvatar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#57"><abbr title="App\Ship\Parents\Models\AbstractUser::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#63"><abbr title="App\Ship\Parents\Models\AbstractUser::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#69"><abbr title="App\Ship\Parents\Models\AbstractUser::setPassword">setPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#75"><abbr title="App\Ship\Parents\Models\AbstractUser::setAvatar">setAvatar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#81"><abbr title="App\Ship\Parents\Models\AbstractUser::hasVerifiedEmail">hasVerifiedEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/AbstractUser.php.html#86"><abbr title="App\Ship\Parents\Models\AbstractUser::markEmailAsVerified">markEmailAsVerified</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#12"><abbr title="App\Ship\Parents\Models\UserProfileModel::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#17"><abbr title="App\Ship\Parents\Models\UserProfileModel::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#22"><abbr title="App\Ship\Parents\Models\UserProfileModel::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#27"><abbr title="App\Ship\Parents\Models\UserProfileModel::getAvatar">getAvatar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#32"><abbr title="App\Ship\Parents\Models\UserProfileModel::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#38"><abbr title="App\Ship\Parents\Models\UserProfileModel::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#44"><abbr title="App\Ship\Parents\Models\UserProfileModel::setPassword">setPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#50"><abbr title="App\Ship\Parents\Models\UserProfileModel::setAvatar">setAvatar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#56"><abbr title="App\Ship\Parents\Models\UserProfileModel::hasVerifiedEmail">hasVerifiedEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Parents/Models/UserProfileModel.php.html#61"><abbr title="App\Ship\Parents\Models\UserProfileModel::markEmailAsVerified">markEmailAsVerified</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Providers/ShipServiceProvider.php.html#16"><abbr title="App\Ship\Providers\ShipServiceProvider::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Providers/ShipServiceProvider.php.html#24"><abbr title="App\Ship\Providers\ShipServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ship/Providers/UserServiceProvider.php.html#13"><abbr title="App\Ship\Providers\UserServiceProvider::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Enums/FamilyMemberRoleEnum.php.html#14"><abbr title="App\Containers\Family\Enums\FamilyMemberRoleEnum::label">label</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Enums/FamilyMemberRoleEnum.php.html#24"><abbr title="App\Containers\Family\Enums\FamilyMemberRoleEnum::canManageMembers">canManageMembers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Family/Enums/FamilyMemberRoleEnum.php.html#32"><abbr title="App\Containers\Family\Enums\FamilyMemberRoleEnum::canManageFinances">canManageFinances</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Enums/TodoStatusEnum.php.html#23"><abbr title="App\Containers\Todo\Enums\TodoStatusEnum::getValues">getValues</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Enums/TodoStatusEnum.php.html#31"><abbr title="App\Containers\Todo\Enums\TodoStatusEnum::getLabel">getLabel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Enums/TodoStatusEnum.php.html#43"><abbr title="App\Containers\Todo\Enums\TodoStatusEnum::isCompleted">isCompleted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Enums/TodoStatusEnum.php.html#51"><abbr title="App\Containers\Todo\Enums\TodoStatusEnum::isPending">isPending</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#17"><abbr title="App\Containers\Todo\Traits\HasTodosTrait::todos">todos</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#25"><abbr title="App\Containers\Todo\Traits\HasTodosTrait::completedTodos">completedTodos</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#35"><abbr title="App\Containers\Todo\Traits\HasTodosTrait::pendingTodos">pendingTodos</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#45"><abbr title="App\Containers\Todo\Traits\HasTodosTrait::cancelledTodos">cancelledTodos</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#55"><abbr title="App\Containers\Todo\Traits\HasTodosTrait::getCompletedTodosCount">getCompletedTodosCount</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#65"><abbr title="App\Containers\Todo\Traits\HasTodosTrait::getTodosCompletionRate">getTodosCompletionRate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#82"><abbr title="App\Containers\Todo\Traits\HasTodosTrait::createTodo">createTodo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/PropertyFillable.php.html#16"><abbr title="App\Traits\PropertyFillable::fillProperties">fillProperties</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/UnsetPropertiesHandle.php.html#11"><abbr title="App\Traits\UnsetPropertiesHandle::getUnsetProperties">getUnsetProperties</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Controllers/AuthController.php.html#34"><abbr title="App\Containers\Authentication\UI\WEB\Controllers\AuthController::register">register</abbr></a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Controllers/AuthController.php.html#73"><abbr title="App\Containers\Authentication\UI\WEB\Controllers\AuthController::login">login</abbr></a></td><td class="text-right">73%</td></tr>
+       <tr><td><a href="Http/Middleware/HandleInertiaRequests.php.html#38"><abbr title="App\Http\Middleware\HandleInertiaRequests::share">share</abbr></a></td><td class="text-right">81%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Traits/PropertyFillable.php.html#16"><abbr title="App\Traits\PropertyFillable::fillProperties">fillProperties</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Containers/Family/Enums/FamilyMemberRoleEnum.php.html#14"><abbr title="App\Containers\Family\Enums\FamilyMemberRoleEnum::label">label</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Containers/Todo/Enums/TodoStatusEnum.php.html#31"><abbr title="App\Containers\Todo\Enums\TodoStatusEnum::getLabel">getLabel</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Traits/UnsetPropertiesHandle.php.html#11"><abbr title="App\Traits\UnsetPropertiesHandle::getUnsetProperties">getUnsetProperties</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Containers/Authentication/Actions/LoginAction.php.html#21"><abbr title="App\Containers\Authentication\Actions\LoginAction::run">run</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Requests/LoginRequest.php.html#48"><abbr title="App\Containers\Authentication\UI\WEB\Requests\LoginRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/ToggleTodoStatusTask.php.html#23"><abbr title="App\Containers\Todo\Tasks\ToggleTodoStatusTask::run">run</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Family/Enums/FamilyMemberRoleEnum.php.html#24"><abbr title="App\Containers\Family\Enums\FamilyMemberRoleEnum::canManageMembers">canManageMembers</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Family/Enums/FamilyMemberRoleEnum.php.html#32"><abbr title="App\Containers\Family\Enums\FamilyMemberRoleEnum::canManageFinances">canManageFinances</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Containers/Family/Tasks/CreateFamilyMemberTask.php.html#23"><abbr title="App\Containers\Family\Tasks\CreateFamilyMemberTask::run">run</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Containers/Todo/Actions/GetAllTodosAction.php.html#28"><abbr title="App\Containers\Todo\Actions\GetAllTodosAction::run">run</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/CreateTodoTask.php.html#26"><abbr title="App\Containers\Todo\Tasks\CreateTodoTask::run">run</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Containers/Todo/Tasks/GetAllTodosTask.php.html#36"><abbr title="App\Containers\Todo\Tasks\GetAllTodosTask::run">run</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Containers/Todo/UI/API/Controllers/TodoController.php.html#32"><abbr title="App\Containers\Todo\UI\API\Controllers\TodoController::index">index</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#40"><abbr title="App\Http\Requests\Auth\LoginRequest::authenticate">authenticate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Requests/Auth/LoginRequest.php.html#60"><abbr title="App\Http\Requests\Auth\LoginRequest::ensureIsNotRateLimited">ensureIsNotRateLimited</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Containers/Todo/Traits/HasTodosTrait.php.html#65"><abbr title="App\Containers\Todo\Traits\HasTodosTrait::getTodosCompletionRate">getTodosCompletionRate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/HandleInertiaRequests.php.html#38"><abbr title="App\Http\Middleware\HandleInertiaRequests::share">share</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Controllers/AuthController.php.html#34"><abbr title="App\Containers\Authentication\UI\WEB\Controllers\AuthController::register">register</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Containers/Authentication/UI/WEB/Controllers/AuthController.php.html#73"><abbr title="App\Containers\Authentication\UI\WEB\Controllers\AuthController::login">login</abbr></a></td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.8</a> and <a href="https://phpunit.de/">PHPUnit 11.5.22</a> at Fri Jun 20 9:32:36 UTC 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([45,0,0,0,0,0,2,0,0,2,0,12], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([139,0,0,0,0,1,0,0,1,1,0,28], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,3,"<a href=\"Containers\/Authentication\/Actions\/LoginAction.php.html#13\">App\\Containers\\Authentication\\Actions\\LoginAction<\/a>"],[0,1,"<a href=\"Containers\/Authentication\/Actions\/RegisterAction.php.html#12\">App\\Containers\\Authentication\\Actions\\RegisterAction<\/a>"],[100,5,"<a href=\"Containers\/Authentication\/Providers\/AuthenticationServiceProvider.php.html#10\">App\\Containers\\Authentication\\Providers\\AuthenticationServiceProvider<\/a>"],[52.17391304347826,10,"<a href=\"Containers\/Authentication\/UI\/WEB\/Controllers\/AuthController.php.html#22\">App\\Containers\\Authentication\\UI\\WEB\\Controllers\\AuthController<\/a>"],[52.63157894736842,6,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/LoginRequest.php.html#12\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\LoginRequest<\/a>"],[100,6,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/RegisterRequest.php.html#12\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\RegisterRequest<\/a>"],[0,1,"<a href=\"Containers\/Family\/Actions\/CreateFamilyGroupAction.php.html#12\">App\\Containers\\Family\\Actions\\CreateFamilyGroupAction<\/a>"],[0,3,"<a href=\"Containers\/Family\/Models\/FamilyGroup.php.html#13\">App\\Containers\\Family\\Models\\FamilyGroup<\/a>"],[0,2,"<a href=\"Containers\/Family\/Models\/FamilyMember.php.html#12\">App\\Containers\\Family\\Models\\FamilyMember<\/a>"],[0,2,"<a href=\"Containers\/Family\/Models\/Invitation.php.html#12\">App\\Containers\\Family\\Models\\Invitation<\/a>"],[0,2,"<a href=\"Containers\/Family\/Models\/UserFamilyRole.php.html#11\">App\\Containers\\Family\\Models\\UserFamilyRole<\/a>"],[100,4,"<a href=\"Containers\/Family\/Providers\/FamilyServiceProvider.php.html#15\">App\\Containers\\Family\\Providers\\FamilyServiceProvider<\/a>"],[0,2,"<a href=\"Containers\/Family\/Tasks\/CreateFamilyMemberTask.php.html#13\">App\\Containers\\Family\\Tasks\\CreateFamilyMemberTask<\/a>"],[0,2,"<a href=\"Containers\/Family\/UI\/API\/Controllers\/FamilyGroupController.php.html#12\">App\\Containers\\Family\\UI\\API\\Controllers\\FamilyGroupController<\/a>"],[0,2,"<a href=\"Containers\/Family\/UI\/API\/Requests\/CreateFamilyGroupRequest.php.html#9\">App\\Containers\\Family\\UI\\API\\Requests\\CreateFamilyGroupRequest<\/a>"],[0,5,"<a href=\"Containers\/Finance\/Models\/Account.php.html#15\">App\\Containers\\Finance\\Models\\Account<\/a>"],[0,3,"<a href=\"Containers\/Finance\/Models\/Asset.php.html#14\">App\\Containers\\Finance\\Models\\Asset<\/a>"],[0,3,"<a href=\"Containers\/Finance\/Models\/Budget.php.html#14\">App\\Containers\\Finance\\Models\\Budget<\/a>"],[0,7,"<a href=\"Containers\/Finance\/Models\/Category.php.html#15\">App\\Containers\\Finance\\Models\\Category<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/FinancialUser.php.html#8\">App\\Containers\\Finance\\Models\\FinancialUser<\/a>"],[0,6,"<a href=\"Containers\/Finance\/Models\/RecurringExpense.php.html#15\">App\\Containers\\Finance\\Models\\RecurringExpense<\/a>"],[0,4,"<a href=\"Containers\/Finance\/Models\/SavingsGoal.php.html#14\">App\\Containers\\Finance\\Models\\SavingsGoal<\/a>"],[0,6,"<a href=\"Containers\/Finance\/Models\/Transaction.php.html#14\">App\\Containers\\Finance\\Models\\Transaction<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Actions\/CreateTodoAction.php.html#17\">App\\Containers\\Todo\\Actions\\CreateTodoAction<\/a>"],[0,3,"<a href=\"Containers\/Todo\/Actions\/GetAllTodosAction.php.html#17\">App\\Containers\\Todo\\Actions\\GetAllTodosAction<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Actions\/GetUserTodosAction.php.html#12\">App\\Containers\\Todo\\Actions\\GetUserTodosAction<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Actions\/ToggleTodoStatusAction.php.html#17\">App\\Containers\\Todo\\Actions\\ToggleTodoStatusAction<\/a>"],[0,4,"<a href=\"Containers\/Todo\/Data\/Factories\/TodoFactory.php.html#16\">App\\Containers\\Todo\\Data\\Factories\\TodoFactory<\/a>"],[0,7,"<a href=\"Containers\/Todo\/Models\/Todo.php.html#25\">App\\Containers\\Todo\\Models\\Todo<\/a>"],[100,4,"<a href=\"Containers\/Todo\/Providers\/TodoServiceProvider.php.html#15\">App\\Containers\\Todo\\Providers\\TodoServiceProvider<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Tasks\/CreateTodoTask.php.html#17\">App\\Containers\\Todo\\Tasks\\CreateTodoTask<\/a>"],[0,3,"<a href=\"Containers\/Todo\/Tasks\/GetAllTodosTask.php.html#17\">App\\Containers\\Todo\\Tasks\\GetAllTodosTask<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Tasks\/GetUserTodosTask.php.html#12\">App\\Containers\\Todo\\Tasks\\GetUserTodosTask<\/a>"],[0,3,"<a href=\"Containers\/Todo\/Tasks\/ToggleTodoStatusTask.php.html#16\">App\\Containers\\Todo\\Tasks\\ToggleTodoStatusTask<\/a>"],[0,5,"<a href=\"Containers\/Todo\/UI\/API\/Controllers\/TodoController.php.html#21\">App\\Containers\\Todo\\UI\\API\\Controllers\\TodoController<\/a>"],[0,3,"<a href=\"Containers\/Todo\/UI\/API\/Requests\/CreateTodoRequest.php.html#14\">App\\Containers\\Todo\\UI\\API\\Requests\\CreateTodoRequest<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Controller.php.html#5\">App\\Http\\Controllers\\Controller<\/a>"],[100,1,"<a href=\"Http\/Middleware\/HandleAppearance.php.html#10\">App\\Http\\Middleware\\HandleAppearance<\/a>"],[82.14285714285714,6,"<a href=\"Http\/Middleware\/HandleInertiaRequests.php.html#10\">App\\Http\\Middleware\\HandleInertiaRequests<\/a>"],[0,7,"<a href=\"Http\/Requests\/Auth\/LoginRequest.php.html#12\">App\\Http\\Requests\\Auth\\LoginRequest<\/a>"],[0,1,"<a href=\"Http\/Requests\/Settings\/ProfileUpdateRequest.php.html#9\">App\\Http\\Requests\\Settings\\ProfileUpdateRequest<\/a>"],[80,2,"<a href=\"Models\/User.php.html#13\">App\\Models\\User<\/a>"],[100,2,"<a href=\"Providers\/AppServiceProvider.php.html#9\">App\\Providers\\AppServiceProvider<\/a>"],[0,1,"<a href=\"Ship\/Exceptions\/CreateResourceFailedException.php.html#14\">App\\Ship\\Exceptions\\CreateResourceFailedException<\/a>"],[0,1,"<a href=\"Ship\/Exceptions\/NotFoundException.php.html#14\">App\\Ship\\Exceptions\\NotFoundException<\/a>"],[0,0,"<a href=\"Ship\/Parents\/Actions\/Action.php.html#13\">App\\Ship\\Parents\\Actions\\Action<\/a>"],[0,4,"<a href=\"Ship\/Parents\/Controllers\/ApiController.php.html#17\">App\\Ship\\Parents\\Controllers\\ApiController<\/a>"],[100,0,"<a href=\"Ship\/Parents\/Controllers\/WebController.php.html#11\">App\\Ship\\Parents\\Controllers\\WebController<\/a>"],[0,10,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#13\">App\\Ship\\Parents\\Models\\AbstractUser<\/a>"],[100,0,"<a href=\"Ship\/Parents\/Models\/Model.php.html#14\">App\\Ship\\Parents\\Models\\Model<\/a>"],[0,10,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#10\">App\\Ship\\Parents\\Models\\UserProfileModel<\/a>"],[100,3,"<a href=\"Ship\/Parents\/Providers\/MainServiceProvider.php.html#17\">App\\Ship\\Parents\\Providers\\MainServiceProvider<\/a>"],[100,0,"<a href=\"Ship\/Parents\/Requests\/Request.php.html#14\">App\\Ship\\Parents\\Requests\\Request<\/a>"],[100,0,"<a href=\"Ship\/Parents\/Tasks\/Task.php.html#13\">App\\Ship\\Parents\\Tasks\\Task<\/a>"],[0,2,"<a href=\"Ship\/Providers\/ShipServiceProvider.php.html#11\">App\\Ship\\Providers\\ShipServiceProvider<\/a>"],[0,1,"<a href=\"Ship\/Providers\/UserServiceProvider.php.html#11\">App\\Ship\\Providers\\UserServiceProvider<\/a>"],[0,11,"<a href=\"Containers\/Family\/Enums\/FamilyMemberRoleEnum.php.html#7\">App\\Containers\\Family\\Enums\\FamilyMemberRoleEnum<\/a>"],[0,7,"<a href=\"Containers\/Todo\/Enums\/TodoStatusEnum.php.html#12\">App\\Containers\\Todo\\Enums\\TodoStatusEnum<\/a>"],[0,8,"<a href=\"Containers\/Todo\/Traits\/HasTodosTrait.php.html#12\">App\\Containers\\Todo\\Traits\\HasTodosTrait<\/a>"],[0,8,"<a href=\"Traits\/PropertyFillable.php.html#12\">App\\Traits\\PropertyFillable<\/a>"],[0,4,"<a href=\"Traits\/UnsetPropertiesHandle.php.html#9\">App\\Traits\\UnsetPropertiesHandle<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,3,"<a href=\"Containers\/Authentication\/Actions\/LoginAction.php.html#21\">App\\Containers\\Authentication\\Actions\\LoginAction::run<\/a>"],[0,1,"<a href=\"Containers\/Authentication\/Actions\/RegisterAction.php.html#21\">App\\Containers\\Authentication\\Actions\\RegisterAction::run<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/Providers\/AuthenticationServiceProvider.php.html#15\">App\\Containers\\Authentication\\Providers\\AuthenticationServiceProvider::register<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/Providers\/AuthenticationServiceProvider.php.html#23\">App\\Containers\\Authentication\\Providers\\AuthenticationServiceProvider::boot<\/a>"],[100,2,"<a href=\"Containers\/Authentication\/Providers\/AuthenticationServiceProvider.php.html#39\">App\\Containers\\Authentication\\Providers\\AuthenticationServiceProvider::loadRoutesFromDirectory<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/Providers\/AuthenticationServiceProvider.php.html#48\">App\\Containers\\Authentication\\Providers\\AuthenticationServiceProvider::loadWebRoutes<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Controllers\/AuthController.php.html#24\">App\\Containers\\Authentication\\UI\\WEB\\Controllers\\AuthController::create<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Controllers\/AuthController.php.html#29\">App\\Containers\\Authentication\\UI\\WEB\\Controllers\\AuthController::loginForm<\/a>"],[42.30769230769231,3,"<a href=\"Containers\/Authentication\/UI\/WEB\/Controllers\/AuthController.php.html#34\">App\\Containers\\Authentication\\UI\\WEB\\Controllers\\AuthController::register<\/a>"],[73.33333333333333,4,"<a href=\"Containers\/Authentication\/UI\/WEB\/Controllers\/AuthController.php.html#73\">App\\Containers\\Authentication\\UI\\WEB\\Controllers\\AuthController::login<\/a>"],[0,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Controllers\/AuthController.php.html#98\">App\\Containers\\Authentication\\UI\\WEB\\Controllers\\AuthController::logout<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/LoginRequest.php.html#17\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\LoginRequest::authorize<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/LoginRequest.php.html#25\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\LoginRequest::rules<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/LoginRequest.php.html#36\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\LoginRequest::messages<\/a>"],[0,3,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/LoginRequest.php.html#48\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\LoginRequest::failedValidation<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/RegisterRequest.php.html#17\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\RegisterRequest::authorize<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/RegisterRequest.php.html#25\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\RegisterRequest::rules<\/a>"],[100,1,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/RegisterRequest.php.html#37\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\RegisterRequest::messages<\/a>"],[100,3,"<a href=\"Containers\/Authentication\/UI\/WEB\/Requests\/RegisterRequest.php.html#56\">App\\Containers\\Authentication\\UI\\WEB\\Requests\\RegisterRequest::failedValidation<\/a>"],[0,1,"<a href=\"Containers\/Family\/Actions\/CreateFamilyGroupAction.php.html#19\">App\\Containers\\Family\\Actions\\CreateFamilyGroupAction::run<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/FamilyGroup.php.html#30\">App\\Containers\\Family\\Models\\FamilyGroup::members<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/FamilyGroup.php.html#35\">App\\Containers\\Family\\Models\\FamilyGroup::invitations<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/FamilyGroup.php.html#40\">App\\Containers\\Family\\Models\\FamilyGroup::users<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/FamilyMember.php.html#30\">App\\Containers\\Family\\Models\\FamilyMember::familyGroup<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/FamilyMember.php.html#35\">App\\Containers\\Family\\Models\\FamilyMember::user<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/Invitation.php.html#32\">App\\Containers\\Family\\Models\\Invitation::familyGroup<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/Invitation.php.html#37\">App\\Containers\\Family\\Models\\Invitation::invitedBy<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/UserFamilyRole.php.html#30\">App\\Containers\\Family\\Models\\UserFamilyRole::user<\/a>"],[0,1,"<a href=\"Containers\/Family\/Models\/UserFamilyRole.php.html#38\">App\\Containers\\Family\\Models\\UserFamilyRole::familyGroup<\/a>"],[100,1,"<a href=\"Containers\/Family\/Providers\/FamilyServiceProvider.php.html#20\">App\\Containers\\Family\\Providers\\FamilyServiceProvider::register<\/a>"],[100,1,"<a href=\"Containers\/Family\/Providers\/FamilyServiceProvider.php.html#28\">App\\Containers\\Family\\Providers\\FamilyServiceProvider::boot<\/a>"],[100,2,"<a href=\"Containers\/Family\/Providers\/FamilyServiceProvider.php.html#36\">App\\Containers\\Family\\Providers\\FamilyServiceProvider::loadRoutes<\/a>"],[0,2,"<a href=\"Containers\/Family\/Tasks\/CreateFamilyMemberTask.php.html#23\">App\\Containers\\Family\\Tasks\\CreateFamilyMemberTask::run<\/a>"],[0,1,"<a href=\"Containers\/Family\/UI\/API\/Controllers\/FamilyGroupController.php.html#14\">App\\Containers\\Family\\UI\\API\\Controllers\\FamilyGroupController::__construct<\/a>"],[0,1,"<a href=\"Containers\/Family\/UI\/API\/Controllers\/FamilyGroupController.php.html#21\">App\\Containers\\Family\\UI\\API\\Controllers\\FamilyGroupController::store<\/a>"],[0,1,"<a href=\"Containers\/Family\/UI\/API\/Requests\/CreateFamilyGroupRequest.php.html#14\">App\\Containers\\Family\\UI\\API\\Requests\\CreateFamilyGroupRequest::rules<\/a>"],[0,1,"<a href=\"Containers\/Family\/UI\/API\/Requests\/CreateFamilyGroupRequest.php.html#24\">App\\Containers\\Family\\UI\\API\\Requests\\CreateFamilyGroupRequest::authorize<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Account.php.html#22\">App\\Containers\\Finance\\Models\\Account::newFactory<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Account.php.html#45\">App\\Containers\\Finance\\Models\\Account::familyGroup<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Account.php.html#50\">App\\Containers\\Finance\\Models\\Account::createdBy<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Account.php.html#55\">App\\Containers\\Finance\\Models\\Account::transactions<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Account.php.html#60\">App\\Containers\\Finance\\Models\\Account::recurringExpenses<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Asset.php.html#21\">App\\Containers\\Finance\\Models\\Asset::newFactory<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Asset.php.html#44\">App\\Containers\\Finance\\Models\\Asset::familyGroup<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Asset.php.html#49\">App\\Containers\\Finance\\Models\\Asset::createdBy<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Budget.php.html#21\">App\\Containers\\Finance\\Models\\Budget::newFactory<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Budget.php.html#49\">App\\Containers\\Finance\\Models\\Budget::user<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Budget.php.html#54\">App\\Containers\\Finance\\Models\\Budget::category<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Category.php.html#22\">App\\Containers\\Finance\\Models\\Category::newFactory<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Category.php.html#42\">App\\Containers\\Finance\\Models\\Category::familyGroup<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Category.php.html#47\">App\\Containers\\Finance\\Models\\Category::parent<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Category.php.html#52\">App\\Containers\\Finance\\Models\\Category::children<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Category.php.html#57\">App\\Containers\\Finance\\Models\\Category::transactions<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Category.php.html#62\">App\\Containers\\Finance\\Models\\Category::budgets<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Category.php.html#67\">App\\Containers\\Finance\\Models\\Category::createdBy<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/FinancialUser.php.html#15\">App\\Containers\\Finance\\Models\\FinancialUser::getFinancialProfile<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/RecurringExpense.php.html#22\">App\\Containers\\Finance\\Models\\RecurringExpense::newFactory<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/RecurringExpense.php.html#49\">App\\Containers\\Finance\\Models\\RecurringExpense::familyGroup<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/RecurringExpense.php.html#54\">App\\Containers\\Finance\\Models\\RecurringExpense::account<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/RecurringExpense.php.html#59\">App\\Containers\\Finance\\Models\\RecurringExpense::category<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/RecurringExpense.php.html#64\">App\\Containers\\Finance\\Models\\RecurringExpense::transactions<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/RecurringExpense.php.html#69\">App\\Containers\\Finance\\Models\\RecurringExpense::createdBy<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/SavingsGoal.php.html#21\">App\\Containers\\Finance\\Models\\SavingsGoal::newFactory<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/SavingsGoal.php.html#45\">App\\Containers\\Finance\\Models\\SavingsGoal::familyGroup<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/SavingsGoal.php.html#50\">App\\Containers\\Finance\\Models\\SavingsGoal::account<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/SavingsGoal.php.html#55\">App\\Containers\\Finance\\Models\\SavingsGoal::createdBy<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Transaction.php.html#21\">App\\Containers\\Finance\\Models\\Transaction::newFactory<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Transaction.php.html#45\">App\\Containers\\Finance\\Models\\Transaction::familyGroup<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Transaction.php.html#50\">App\\Containers\\Finance\\Models\\Transaction::account<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Transaction.php.html#55\">App\\Containers\\Finance\\Models\\Transaction::category<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Transaction.php.html#60\">App\\Containers\\Finance\\Models\\Transaction::createdBy<\/a>"],[0,1,"<a href=\"Containers\/Finance\/Models\/Transaction.php.html#65\">App\\Containers\\Finance\\Models\\Transaction::recurringExpense<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Actions\/CreateTodoAction.php.html#23\">App\\Containers\\Todo\\Actions\\CreateTodoAction::__construct<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Actions\/CreateTodoAction.php.html#33\">App\\Containers\\Todo\\Actions\\CreateTodoAction::run<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Actions\/GetAllTodosAction.php.html#19\">App\\Containers\\Todo\\Actions\\GetAllTodosAction::__construct<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Actions\/GetAllTodosAction.php.html#28\">App\\Containers\\Todo\\Actions\\GetAllTodosAction::run<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Actions\/GetUserTodosAction.php.html#14\">App\\Containers\\Todo\\Actions\\GetUserTodosAction::__construct<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Actions\/GetUserTodosAction.php.html#19\">App\\Containers\\Todo\\Actions\\GetUserTodosAction::run<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Actions\/ToggleTodoStatusAction.php.html#23\">App\\Containers\\Todo\\Actions\\ToggleTodoStatusAction::__construct<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Actions\/ToggleTodoStatusAction.php.html#30\">App\\Containers\\Todo\\Actions\\ToggleTodoStatusAction::run<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Data\/Factories\/TodoFactory.php.html#25\">App\\Containers\\Todo\\Data\\Factories\\TodoFactory::definition<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Data\/Factories\/TodoFactory.php.html#38\">App\\Containers\\Todo\\Data\\Factories\\TodoFactory::completed<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Data\/Factories\/TodoFactory.php.html#49\">App\\Containers\\Todo\\Data\\Factories\\TodoFactory::incomplete<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Data\/Factories\/TodoFactory.php.html#60\">App\\Containers\\Todo\\Data\\Factories\\TodoFactory::cancelled<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Models\/Todo.php.html#32\">App\\Containers\\Todo\\Models\\Todo::newFactory<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Models\/Todo.php.html#54\">App\\Containers\\Todo\\Models\\Todo::markAsCompleted<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Models\/Todo.php.html#65\">App\\Containers\\Todo\\Models\\Todo::markAsIncomplete<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Models\/Todo.php.html#76\">App\\Containers\\Todo\\Models\\Todo::markAsCancelled<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Models\/Todo.php.html#87\">App\\Containers\\Todo\\Models\\Todo::scopeCompleted<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Models\/Todo.php.html#95\">App\\Containers\\Todo\\Models\\Todo::scopeIncomplete<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Models\/Todo.php.html#103\">App\\Containers\\Todo\\Models\\Todo::scopeCancelled<\/a>"],[100,1,"<a href=\"Containers\/Todo\/Providers\/TodoServiceProvider.php.html#20\">App\\Containers\\Todo\\Providers\\TodoServiceProvider::register<\/a>"],[100,1,"<a href=\"Containers\/Todo\/Providers\/TodoServiceProvider.php.html#28\">App\\Containers\\Todo\\Providers\\TodoServiceProvider::boot<\/a>"],[100,2,"<a href=\"Containers\/Todo\/Providers\/TodoServiceProvider.php.html#36\">App\\Containers\\Todo\\Providers\\TodoServiceProvider::loadRoutes<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Tasks\/CreateTodoTask.php.html#26\">App\\Containers\\Todo\\Tasks\\CreateTodoTask::run<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Tasks\/GetAllTodosTask.php.html#24\">App\\Containers\\Todo\\Tasks\\GetAllTodosTask::filterByStatus<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Tasks\/GetAllTodosTask.php.html#36\">App\\Containers\\Todo\\Tasks\\GetAllTodosTask::run<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Tasks\/GetUserTodosTask.php.html#14\">App\\Containers\\Todo\\Tasks\\GetUserTodosTask::run<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Tasks\/GetUserTodosTask.php.html#22\">App\\Containers\\Todo\\Tasks\\GetUserTodosTask::runWithEmail<\/a>"],[0,3,"<a href=\"Containers\/Todo\/Tasks\/ToggleTodoStatusTask.php.html#23\">App\\Containers\\Todo\\Tasks\\ToggleTodoStatusTask::run<\/a>"],[0,1,"<a href=\"Containers\/Todo\/UI\/API\/Controllers\/TodoController.php.html#23\">App\\Containers\\Todo\\UI\\API\\Controllers\\TodoController::__construct<\/a>"],[0,2,"<a href=\"Containers\/Todo\/UI\/API\/Controllers\/TodoController.php.html#32\">App\\Containers\\Todo\\UI\\API\\Controllers\\TodoController::index<\/a>"],[0,1,"<a href=\"Containers\/Todo\/UI\/API\/Controllers\/TodoController.php.html#45\">App\\Containers\\Todo\\UI\\API\\Controllers\\TodoController::store<\/a>"],[0,1,"<a href=\"Containers\/Todo\/UI\/API\/Controllers\/TodoController.php.html#59\">App\\Containers\\Todo\\UI\\API\\Controllers\\TodoController::toggle<\/a>"],[0,1,"<a href=\"Containers\/Todo\/UI\/API\/Requests\/CreateTodoRequest.php.html#19\">App\\Containers\\Todo\\UI\\API\\Requests\\CreateTodoRequest::authorize<\/a>"],[0,1,"<a href=\"Containers\/Todo\/UI\/API\/Requests\/CreateTodoRequest.php.html#29\">App\\Containers\\Todo\\UI\\API\\Requests\\CreateTodoRequest::rules<\/a>"],[0,1,"<a href=\"Containers\/Todo\/UI\/API\/Requests\/CreateTodoRequest.php.html#42\">App\\Containers\\Todo\\UI\\API\\Requests\\CreateTodoRequest::messages<\/a>"],[100,1,"<a href=\"Http\/Middleware\/HandleAppearance.php.html#17\">App\\Http\\Middleware\\HandleAppearance::handle<\/a>"],[100,1,"<a href=\"Http\/Middleware\/HandleInertiaRequests.php.html#26\">App\\Http\\Middleware\\HandleInertiaRequests::version<\/a>"],[81.48148148148148,5,"<a href=\"Http\/Middleware\/HandleInertiaRequests.php.html#38\">App\\Http\\Middleware\\HandleInertiaRequests::share<\/a>"],[0,1,"<a href=\"Http\/Requests\/Auth\/LoginRequest.php.html#17\">App\\Http\\Requests\\Auth\\LoginRequest::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/Auth\/LoginRequest.php.html#27\">App\\Http\\Requests\\Auth\\LoginRequest::rules<\/a>"],[0,2,"<a href=\"Http\/Requests\/Auth\/LoginRequest.php.html#40\">App\\Http\\Requests\\Auth\\LoginRequest::authenticate<\/a>"],[0,2,"<a href=\"Http\/Requests\/Auth\/LoginRequest.php.html#60\">App\\Http\\Requests\\Auth\\LoginRequest::ensureIsNotRateLimited<\/a>"],[0,1,"<a href=\"Http\/Requests\/Auth\/LoginRequest.php.html#81\">App\\Http\\Requests\\Auth\\LoginRequest::throttleKey<\/a>"],[0,1,"<a href=\"Http\/Requests\/Settings\/ProfileUpdateRequest.php.html#16\">App\\Http\\Requests\\Settings\\ProfileUpdateRequest::rules<\/a>"],[100,1,"<a href=\"Models\/User.php.html#44\">App\\Models\\User::casts<\/a>"],[0,1,"<a href=\"Models\/User.php.html#55\">App\\Models\\User::familyRoles<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#14\">App\\Providers\\AppServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#22\">App\\Providers\\AppServiceProvider::boot<\/a>"],[0,1,"<a href=\"Ship\/Exceptions\/CreateResourceFailedException.php.html#16\">App\\Ship\\Exceptions\\CreateResourceFailedException::__construct<\/a>"],[0,1,"<a href=\"Ship\/Exceptions\/NotFoundException.php.html#16\">App\\Ship\\Exceptions\\NotFoundException::__construct<\/a>"],[0,0,"<a href=\"Ship\/Parents\/Actions\/Action.php.html#18\">App\\Ship\\Parents\\Actions\\Action::run<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Controllers\/ApiController.php.html#27\">App\\Ship\\Parents\\Controllers\\ApiController::success<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Controllers\/ApiController.php.html#41\">App\\Ship\\Parents\\Controllers\\ApiController::created<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Controllers\/ApiController.php.html#51\">App\\Ship\\Parents\\Controllers\\ApiController::error<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Controllers\/ApiController.php.html#63\">App\\Ship\\Parents\\Controllers\\ApiController::notFound<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#37\">App\\Ship\\Parents\\Models\\AbstractUser::getId<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#42\">App\\Ship\\Parents\\Models\\AbstractUser::getEmail<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#47\">App\\Ship\\Parents\\Models\\AbstractUser::getName<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#52\">App\\Ship\\Parents\\Models\\AbstractUser::getAvatar<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#57\">App\\Ship\\Parents\\Models\\AbstractUser::setName<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#63\">App\\Ship\\Parents\\Models\\AbstractUser::setEmail<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#69\">App\\Ship\\Parents\\Models\\AbstractUser::setPassword<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#75\">App\\Ship\\Parents\\Models\\AbstractUser::setAvatar<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#81\">App\\Ship\\Parents\\Models\\AbstractUser::hasVerifiedEmail<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/AbstractUser.php.html#86\">App\\Ship\\Parents\\Models\\AbstractUser::markEmailAsVerified<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#12\">App\\Ship\\Parents\\Models\\UserProfileModel::getId<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#17\">App\\Ship\\Parents\\Models\\UserProfileModel::getEmail<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#22\">App\\Ship\\Parents\\Models\\UserProfileModel::getName<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#27\">App\\Ship\\Parents\\Models\\UserProfileModel::getAvatar<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#32\">App\\Ship\\Parents\\Models\\UserProfileModel::setName<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#38\">App\\Ship\\Parents\\Models\\UserProfileModel::setEmail<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#44\">App\\Ship\\Parents\\Models\\UserProfileModel::setPassword<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#50\">App\\Ship\\Parents\\Models\\UserProfileModel::setAvatar<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#56\">App\\Ship\\Parents\\Models\\UserProfileModel::hasVerifiedEmail<\/a>"],[0,1,"<a href=\"Ship\/Parents\/Models\/UserProfileModel.php.html#61\">App\\Ship\\Parents\\Models\\UserProfileModel::markEmailAsVerified<\/a>"],[100,2,"<a href=\"Ship\/Parents\/Providers\/MainServiceProvider.php.html#33\">App\\Ship\\Parents\\Providers\\MainServiceProvider::register<\/a>"],[100,1,"<a href=\"Ship\/Parents\/Providers\/MainServiceProvider.php.html#43\">App\\Ship\\Parents\\Providers\\MainServiceProvider::boot<\/a>"],[100,0,"<a href=\"Ship\/Parents\/Requests\/Request.php.html#19\">App\\Ship\\Parents\\Requests\\Request::authorize<\/a>"],[100,0,"<a href=\"Ship\/Parents\/Requests\/Request.php.html#24\">App\\Ship\\Parents\\Requests\\Request::rules<\/a>"],[0,1,"<a href=\"Ship\/Providers\/ShipServiceProvider.php.html#16\">App\\Ship\\Providers\\ShipServiceProvider::register<\/a>"],[0,1,"<a href=\"Ship\/Providers\/ShipServiceProvider.php.html#24\">App\\Ship\\Providers\\ShipServiceProvider::boot<\/a>"],[0,1,"<a href=\"Ship\/Providers\/UserServiceProvider.php.html#13\">App\\Ship\\Providers\\UserServiceProvider::register<\/a>"],[0,5,"<a href=\"Containers\/Family\/Enums\/FamilyMemberRoleEnum.php.html#14\">App\\Containers\\Family\\Enums\\FamilyMemberRoleEnum::label<\/a>"],[0,3,"<a href=\"Containers\/Family\/Enums\/FamilyMemberRoleEnum.php.html#24\">App\\Containers\\Family\\Enums\\FamilyMemberRoleEnum::canManageMembers<\/a>"],[0,3,"<a href=\"Containers\/Family\/Enums\/FamilyMemberRoleEnum.php.html#32\">App\\Containers\\Family\\Enums\\FamilyMemberRoleEnum::canManageFinances<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Enums\/TodoStatusEnum.php.html#23\">App\\Containers\\Todo\\Enums\\TodoStatusEnum::getValues<\/a>"],[0,4,"<a href=\"Containers\/Todo\/Enums\/TodoStatusEnum.php.html#31\">App\\Containers\\Todo\\Enums\\TodoStatusEnum::getLabel<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Enums\/TodoStatusEnum.php.html#43\">App\\Containers\\Todo\\Enums\\TodoStatusEnum::isCompleted<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Enums\/TodoStatusEnum.php.html#51\">App\\Containers\\Todo\\Enums\\TodoStatusEnum::isPending<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Traits\/HasTodosTrait.php.html#17\">App\\Containers\\Todo\\Traits\\HasTodosTrait::todos<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Traits\/HasTodosTrait.php.html#25\">App\\Containers\\Todo\\Traits\\HasTodosTrait::completedTodos<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Traits\/HasTodosTrait.php.html#35\">App\\Containers\\Todo\\Traits\\HasTodosTrait::pendingTodos<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Traits\/HasTodosTrait.php.html#45\">App\\Containers\\Todo\\Traits\\HasTodosTrait::cancelledTodos<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Traits\/HasTodosTrait.php.html#55\">App\\Containers\\Todo\\Traits\\HasTodosTrait::getCompletedTodosCount<\/a>"],[0,2,"<a href=\"Containers\/Todo\/Traits\/HasTodosTrait.php.html#65\">App\\Containers\\Todo\\Traits\\HasTodosTrait::getTodosCompletionRate<\/a>"],[0,1,"<a href=\"Containers\/Todo\/Traits\/HasTodosTrait.php.html#82\">App\\Containers\\Todo\\Traits\\HasTodosTrait::createTodo<\/a>"],[0,8,"<a href=\"Traits\/PropertyFillable.php.html#16\">App\\Traits\\PropertyFillable::fillProperties<\/a>"],[0,4,"<a href=\"Traits\/UnsetPropertiesHandle.php.html#11\">App\\Traits\\UnsetPropertiesHandle::getUnsetProperties<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

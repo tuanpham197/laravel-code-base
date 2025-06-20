@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('family_group_id')->constrained('family_groups')->onDelete('cascade');
             $table->enum('role', ['owner', 'member', 'viewer']);
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
         });
     }
 

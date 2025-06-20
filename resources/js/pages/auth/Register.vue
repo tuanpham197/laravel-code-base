@@ -4,16 +4,18 @@ import TextLink from '@/components/TextLink.vue';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import AuthBase from '@/layouts/AuthLayout.vue';
-import { Head, useForm } from '@inertiajs/vue3';
-import { LoaderCircle } from 'lucide-vue-next';
-import { watch, onMounted } from 'vue';
+import { useForm } from '@inertiajs/vue3';
 import AuthSplitLayout from '@/layouts/auth/AuthSplitLayout.vue';
-import type { AuthPageProps, RegisterFormData } from '@/types/auth';
 
-const props = defineProps<AuthPageProps>();
+defineProps<{
+    errors: {
+        name: string;
+        email: string;
+        password: string;
+    };
+}>();
 
-const form = useForm<RegisterFormData>({
+const form = useForm({
     name: '',
     email: '',
     password: '',
@@ -21,7 +23,6 @@ const form = useForm<RegisterFormData>({
 });
 
 const submit = () => {
-    
     form.post(route('postregister'), {
         preserveScroll: true,
         onFinish: () => {
