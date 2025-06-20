@@ -1,0 +1,236 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Naming Conventions in Porto Architecture
+
+## Interface Naming Rules
+
+### 1. Capability/Behavior Interfaces
+- Sử dụng hậu tố "able" cho interfaces thể hiện khả năng
+- Tránh các prefix như "I", "Has", "Can"
+- Tập trung vào khả năng của đối tượng
+
+```php
+// ❌ Không tốt
+interface HasFinancialProfile
+interface CanProcessPayment
+interface IUserRepository
+interface PaymentProvider
+
+// ✅ Tốt
+interface Authenticatable
+interface Jsonable
+interface Renderable
+interface Arrayable
+```
+
+### 2. Repository/Service Interfaces
+- Sử dụng hậu tố "Repository" cho interfaces liên quan đến lưu trữ
+- Sử dụng tên đối tượng cho services
+
+```php
+// ❌ Không tốt
+interface IUserRepository
+interface DataProvider
+interface StorageProvider
+interface ServiceManager
+
+// ✅ Tốt
+interface UserRepository
+interface ConfigRepository
+interface Mailer
+interface Queue
+```
+
+### 3. Domain-Specific Interfaces
+- Sử dụng tên rõ ràng phản ánh domain concept
+- Không thêm hậu tố nếu interface đại diện cho một entity/model
+
+```php
+// ❌ Không tốt
+interface IUser
+interface UserInterface
+interface UserContract
+
+// ✅ Tốt
+interface User
+interface Order
+interface Product
+```
+
+## Trait Naming Rules
+
+### 1. Implementation Traits
+- Thêm hậu tố "able" cho traits implement capability interfaces
+- Tên phải match với interface tương ứng
+
+```php
+// Interface và Trait tương ứng
+interface Authenticatable { }
+trait AuthenticatableTrait { }
+
+interface Jsonable { }
+trait JsonableTrait { }
+```
+
+### 2. Behavior Traits
+- Sử dụng động từ + danh từ cho traits thể hiện behavior
+- Tránh các prefix không cần thiết
+
+```php
+// ❌ Không tốt
+trait HasTimestamps
+trait WithSoftDeletes
+trait CanSendEmails
+
+// ✅ Tốt
+trait TimestampRecorder
+trait SoftDeleteSupport
+trait EmailDispatcher
+```
+
+## Model Naming Rules
+
+### 1. Base/Abstract Models
+- Prefix "Abstract" cho abstract classes
+- Tên phải thể hiện rõ đây là base class
+
+```php
+// ❌ Không tốt
+abstract class BaseModel
+abstract class CoreEntity
+abstract class MainModel
+
+// ✅ Tốt
+abstract class AbstractModel
+abstract class AbstractEntity
+abstract class AbstractRepository
+```
+
+### 2. Concrete Models
+- Tên đơn giản, rõ ràng
+- Không cần prefix/suffix không cần thiết
+
+```php
+// ❌ Không tốt
+class UserModel
+class ProductEntity
+class OrderObject
+
+// ✅ Tốt
+class User
+class Product
+class Order
+```
+
+## Action Naming Rules
+
+### 1. Single Action Classes
+- Sử dụng động từ + danh từ + "Action"
+- Tên phải mô tả chính xác một hành động
+
+```php
+// ❌ Không tốt
+class UserCreator
+class PaymentHandler
+class EmailManager
+
+// ✅ Tốt
+class CreateUserAction
+class ProcessPaymentAction
+class SendEmailAction
+```
+
+### 2. Query Actions
+- Prefix với "Get", "Find", "Search" cho query actions
+- Rõ ràng về dữ liệu trả về
+
+```php
+// ❌ Không tốt
+class UserLister
+class ProductFetcher
+class OrderRetriever
+
+// ✅ Tốt
+class GetUserListAction
+class FindProductByIdAction
+class SearchOrdersAction
+```
+
+## Task Naming Rules
+
+### 1. Single Responsibility Tasks
+- Sử dụng động từ + danh từ + "Task"
+- Tên phải thể hiện một operation cụ thể
+
+```php
+// ❌ Không tốt
+class UserProcessor
+class DataHandler
+class EmailHelper
+
+// ✅ Tốt
+class ValidateUserDataTask
+class TransformJsonDataTask
+class SendWelcomeEmailTask
+```
+
+### 2. Utility Tasks
+- Tên phải thể hiện rõ chức năng utility
+- Vẫn giữ hậu tố "Task"
+
+```php
+// ❌ Không tốt
+class Helper
+class Util
+class Manager
+
+// ✅ Tốt
+class FormatDateTimeTask
+class GenerateUniqueIdTask
+class ValidateInputTask
+```
+
+## Container Naming Rules
+
+### 1. Main Containers
+- Tên đơn giản, thể hiện domain
+- Sử dụng PascalCase
+
+```php
+// ❌ Không tốt
+class userManagement
+class product_catalog
+class order_processing
+
+// ✅ Tốt
+class User
+class Product
+class Order
+```
+
+### 2. Sub-Containers
+- Prefix với tên main container
+- Sử dụng dấu gạch ngang
+
+```php
+// ❌ Không tốt
+class UserAuth
+class ProductInventory
+class OrderShipping
+
+// ✅ Tốt
+class User-Authentication
+class Product-Inventory
+class Order-Shipping
+```
+
+## General Rules
+
+1. **Consistency**: Giữ tính nhất quán trong toàn bộ project
+2. **Clarity**: Tên phải rõ ràng, dễ hiểu
+3. **Conciseness**: Ngắn gọn nhưng đầy đủ ý nghĩa
+4. **Domain Focus**: Phản ánh domain concepts
+5. **Behavior Over Type**: Tập trung vào hành vi hơn là kiểu dữ liệu 

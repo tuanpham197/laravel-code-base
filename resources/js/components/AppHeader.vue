@@ -9,10 +9,11 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuList, navigationMenuT
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import UserMenuContent from '@/components/UserMenuContent.vue';
+import { useAppearance } from '@/composables/useAppearance';
 import { getInitials } from '@/composables/useInitials';
 import type { BreadcrumbItem, NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-vue-next';
+import { BookOpen, Folder, LayoutGrid, Menu, Moon, Search, Sun } from 'lucide-vue-next';
 import { computed } from 'vue';
 
 interface Props {
@@ -52,6 +53,12 @@ const rightNavItems: NavItem[] = [
         icon: BookOpen,
     },
 ];
+
+const { appearance, updateAppearance } = useAppearance();
+
+const toggleDarkMode = () => {
+    updateAppearance(appearance.value === 'dark' ? 'light' : 'light');
+};
 </script>
 
 <template>
@@ -85,6 +92,13 @@ const rightNavItems: NavItem[] = [
                                     </Link>
                                 </nav>
                                 <div class="flex flex-col space-y-4">
+                                    <!-- Dark mode toggle in mobile menu -->
+                                    <button class="flex items-center space-x-2 text-sm font-medium" @click="toggleDarkMode">
+                                        <Sun v-if="appearance === 'dark'" class="h-5 w-5" />
+                                        <Moon v-else class="h-5 w-5" />
+                                        <span>Toggle Dark Mode</span>
+                                    </button>
+
                                     <a
                                         v-for="item in rightNavItems"
                                         :key="item.title"
@@ -132,6 +146,22 @@ const rightNavItems: NavItem[] = [
                         <Button variant="ghost" size="icon" class="group h-9 w-9 cursor-pointer">
                             <Search class="size-5 opacity-80 group-hover:opacity-100" />
                         </Button>
+
+                        <!-- Dark mode toggle button -->
+                        <TooltipProvider :delay-duration="0">
+                            <Tooltip>
+                                <TooltipTrigger>
+                                    <Button variant="ghost" size="icon" class="group h-9 w-9 cursor-pointer" @click="toggleDarkMode">
+                                        <Sun v-if="appearance === 'dark'" class="size-5 opacity-80 group-hover:opacity-100" />
+                                        <Moon v-else class="size-5 opacity-80 group-hover:opacity-100" />
+                                        <span class="sr-only">Toggle dark mode</span>
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                    <p>Toggle dark mode</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </TooltipProvider>
 
                         <div class="hidden space-x-1 lg:flex">
                             <template v-for="item in rightNavItems" :key="item.title">

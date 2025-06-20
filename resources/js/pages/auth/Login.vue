@@ -5,89 +5,107 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import AuthBase from '@/layouts/AuthLayout.vue';
+import AuthSplitLayout from '@/layouts/auth/AuthSplitLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import { LoaderCircle } from 'lucide-vue-next';
+import type { AuthPageProps, LoginFormData } from '@/types/auth';
 
-defineProps<{
-    status?: string;
-    canResetPassword: boolean;
-}>();
+const props = defineProps<AuthPageProps>();
 
-const form = useForm({
+const form = useForm<LoginFormData>({
     email: '',
     password: '',
     remember: false,
 });
 
 const submit = () => {
-    form.post(route('login'), {
+    form.post(route('auth.login'), {
         onFinish: () => form.reset('password'),
     });
 };
 </script>
 
 <template>
-    <AuthBase title="Log in to your account" description="Enter your email and password below to log in">
+    <AuthSplitLayout>
+        <template #header>
+            <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+                Đăng nhập
+            </h2>
+        </template>
+
         <Head title="Log in" />
 
         <div v-if="status" class="mb-4 text-center text-sm font-medium text-green-600">
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit" class="flex flex-col gap-6">
-            <div class="grid gap-6">
-                <div class="grid gap-2">
-                    <Label for="email">Email address</Label>
+        <form @submit.prevent="submit" class="space-y-6">
+            <div>
+                <Label for="email">Email</Label>
+                <div class="mt-2">
                     <Input
                         id="email"
-                        type="email"
-                        required
-                        autofocus
-                        :tabindex="1"
-                        autocomplete="email"
                         v-model="form.email"
-                        placeholder="email@example.com"
+                        type="email"
+                        name="email"
+                        required
                     />
-                    <InputError :message="form.errors.email" />
+                    <InputError :message="errors.email" class="mt-2" />
                 </div>
+            </div>
 
-                <div class="grid gap-2">
-                    <div class="flex items-center justify-between">
-                        <Label for="password">Password</Label>
-                        <TextLink v-if="canResetPassword" :href="route('password.request')" class="text-sm" :tabindex="5">
-                            Forgot password?
-                        </TextLink>
-                    </div>
+            <div>
+                <Label for="password">Mật khẩu</Label>
+                <div class="mt-2">
                     <Input
                         id="password"
-                        type="password"
-                        required
-                        :tabindex="2"
-                        autocomplete="current-password"
                         v-model="form.password"
-                        placeholder="Password"
+                        type="password"
+                        name="password"
+                        required
                     />
-                    <InputError :message="form.errors.password" />
+                    <InputError :message="errors.password" class="mt-2" />
                 </div>
+            </div>
 
-                <div class="flex items-center justify-between">
-                    <Label for="remember" class="flex items-center space-x-3">
-                        <Checkbox id="remember" v-model="form.remember" :tabindex="3" />
-                        <span>Remember me</span>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <Checkbox
+                        id="remember"
+                        v-model:checked="form.remember"
+                        name="remember"
+                    />
+                    <Label for="remember" class="ml-3 block text-sm leading-6">
+                        Ghi nhớ đăng nhập
                     </Label>
                 </div>
 
-                <Button type="submit" class="mt-4 w-full" :tabindex="4" :disabled="form.processing">
-                    <LoaderCircle v-if="form.processing" class="h-4 w-4 animate-spin" />
-                    Log in
+                <div class="text-sm leading-6">
+                    <TextLink 
+                        v-if="canResetPassword"
+                        :href="route('password.request')"
+                    >
+                        Quên mật khẩu?
+                    </TextLink>
+                </div>
+            </div>
+
+            <div>
+                <Button
+                    :class="{ 'opacity-25': form.processing }"
+                    :disabled="form.processing"
+                >
+                    Đăng nhập
                 </Button>
             </div>
 
-            <div class="text-center text-sm text-muted-foreground">
-                Don't have an account?
-                <TextLink :href="route('register')" :tabindex="5">Sign up</TextLink>
+            <div class="flex items-center justify-between">
+                <div class="text-sm leading-6">
+                    <TextLink :href="route('register')">
+                        Chưa có tài khoản? Đăng ký
+                    </TextLink>
+                </div>
             </div>
         </form>
-    </AuthBase>
+    </AuthSplitLayout>
 </template>

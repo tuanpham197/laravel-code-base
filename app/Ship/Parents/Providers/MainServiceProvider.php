@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Ship\Parents\Providers;
 
+use App\Containers\Authentication\Providers\AuthenticationServiceProvider;
+use App\Containers\Family\Providers\FamilyServiceProvider;
 use App\Containers\Todo\Providers\TodoServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,6 +23,8 @@ class MainServiceProvider extends ServiceProvider
      */
     protected array $serviceProviders = [
         TodoServiceProvider::class,
+        FamilyServiceProvider::class,
+        AuthenticationServiceProvider::class,
     ];
 
     /**

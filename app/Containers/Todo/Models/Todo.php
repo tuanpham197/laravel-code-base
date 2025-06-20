@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Containers\Todo\Models;
 
 use App\Containers\Todo\Data\Factories\TodoFactory;
+use App\Containers\Todo\Enums\TodoStatusEnum;
 use App\Ship\Parents\Models\Model;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -16,7 +17,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property int $id
  * @property string $title
  * @property string|null $description
- * @property bool $is_completed
+ * @property TodoStatusEnum $status
  * @property Carbon|null $completed_at
  * @property Carbon $created_at
  * @property Carbon $updated_at
@@ -36,12 +37,12 @@ class Todo extends Model
     protected $fillable = [
         'title',
         'description',
-        'is_completed',
+        'status',
         'completed_at',
     ];
 
     protected $casts = [
-        'is_completed' => 'boolean',
+        'status' => TodoStatusEnum::class,
         'completed_at' => 'datetime',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
@@ -53,7 +54,7 @@ class Todo extends Model
     public function markAsCompleted(): void
     {
         $this->update([
-            'is_completed' => true,
+            'status' => TodoStatusEnum::COMPLETED,
             'completed_at' => Carbon::now(new \DateTimeZone('Asia/Tokyo')),
         ]);
     }
@@ -64,7 +65,18 @@ class Todo extends Model
     public function markAsIncomplete(): void
     {
         $this->update([
-            'is_completed' => false,
+            'status' => TodoStatusEnum::PENDING,
+            'completed_at' => null,
+        ]);
+    }
+
+    /**
+     * Mark the todo as cancelled
+     */
+    public function markAsCancelled(): void
+    {
+        $this->update([
+            'status' => TodoStatusEnum::CANCELLED,
             'completed_at' => null,
         ]);
     }
@@ -74,7 +86,7 @@ class Todo extends Model
      */
     public function scopeCompleted($query)
     {
-        return $query->where('is_completed', true);
+        return $query->where('status', TodoStatusEnum::COMPLETED->value);
     }
 
     /**
@@ -82,6 +94,14 @@ class Todo extends Model
      */
     public function scopeIncomplete($query)
     {
-        return $query->where('is_completed', false);
+        return $query->where('status', TodoStatusEnum::PENDING->value);
+    }
+
+    /**
+     * Scope to get only cancelled todos
+     */
+    public function scopeCancelled($query)
+    {
+        return $query->where('status', TodoStatusEnum::CANCELLED->value);
     }
 }

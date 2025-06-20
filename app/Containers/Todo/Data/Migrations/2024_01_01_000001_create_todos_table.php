@@ -15,14 +15,16 @@ return new class extends Migration
     {
         Schema::create('todos', function (Blueprint $table): void {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('family_group_id')->constrained('family_groups')->onDelete('cascade');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->boolean('is_completed')->default(false);
+            $table->enum('status', ['pending', 'completed', 'cancelled'])->default('pending');
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
 
             // Add indexes for better performance
-            $table->index('is_completed');
+            $table->index('status');
             $table->index('created_at');
         });
     }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Containers\Todo\Actions;
 
 use App\Containers\Todo\Tasks\GetAllTodosTask;
+use App\Containers\Todo\Enums\TodoStatusEnum;
 use App\Ship\Parents\Actions\Action;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -22,14 +23,14 @@ class GetAllTodosAction extends Action
     /**
      * Get all todos with optional filtering
      *
-     * @param  bool|null  $completed  Filter by completion status
+     * @param  TodoStatusEnum|null  $status  Filter by status
      */
-    public function run(?bool $completed = null): Collection
+    public function run(?TodoStatusEnum $status = null): Collection
     {
         $task = $this->getAllTodosTask;
 
-        if ($completed !== null) {
-            $task->filterByCompleted($completed);
+        if ($status !== null) {
+            $task->filterByStatus($status);
         }
 
         return $task->run();

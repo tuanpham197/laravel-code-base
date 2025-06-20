@@ -8,6 +8,7 @@ use App\Containers\Todo\Actions\CreateTodoAction;
 use App\Containers\Todo\Actions\GetAllTodosAction;
 use App\Containers\Todo\Actions\ToggleTodoStatusAction;
 use App\Containers\Todo\UI\API\Requests\CreateTodoRequest;
+use App\Containers\Todo\Enums\TodoStatusEnum;
 use App\Ship\Parents\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -30,10 +31,10 @@ class TodoController extends ApiController
      */
     public function index(Request $request): JsonResponse
     {
-        $completed = $request->query('completed');
-        $completedFilter = $completed !== null ? filter_var($completed, FILTER_VALIDATE_BOOLEAN) : null;
+        $status = $request->query('status');
+        $statusFilter = $status !== null ? TodoStatusEnum::tryFrom($status) : null;
 
-        $todos = $this->getAllTodosAction->run($completedFilter);
+        $todos = $this->getAllTodosAction->run($statusFilter);
 
         return $this->success($todos->toArray(), 'Todos retrieved successfully');
     }

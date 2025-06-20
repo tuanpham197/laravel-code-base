@@ -7,8 +7,13 @@ import { Label } from '@/components/ui/label';
 import AuthBase from '@/layouts/AuthLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import { LoaderCircle } from 'lucide-vue-next';
+import { watch, onMounted } from 'vue';
+import AuthSplitLayout from '@/layouts/auth/AuthSplitLayout.vue';
+import type { AuthPageProps, RegisterFormData } from '@/types/auth';
 
-const form = useForm({
+const props = defineProps<AuthPageProps>();
+
+const form = useForm<RegisterFormData>({
     name: '',
     email: '',
     password: '',
@@ -16,68 +21,96 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
+    
+    form.post(route('postregister'), {
+        preserveScroll: true,
+        onFinish: () => {
+            form.reset(('password' as keyof typeof form.data), ('password_confirmation' as keyof typeof form.data));
+        },
     });
 };
 </script>
 
 <template>
-    <AuthBase title="Create an account" description="Enter your details below to create your account">
-        <Head title="Register" />
+    <AuthSplitLayout>
+        <template #header>
+            <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+                Đăng ký tài khoản
+            </h2>
+        </template>
 
-        <form @submit.prevent="submit" class="flex flex-col gap-6">
-            <div class="grid gap-6">
-                <div class="grid gap-2">
-                    <Label for="name">Name</Label>
-                    <Input id="name" type="text" required autofocus :tabindex="1" autocomplete="name" v-model="form.name" placeholder="Full name" />
-                    <InputError :message="form.errors.name" />
+        <form @submit.prevent="submit" class="space-y-6">
+            <div>
+                <Label for="name">Họ và tên</Label>
+                <div class="mt-2">
+                    <Input
+                        id="name"
+                        v-model="form.name"
+                        type="text"
+                        name="name"
+                        required
+                    />
+                    <InputError :message="errors.name" class="mt-2" />
                 </div>
+            </div>
 
-                <div class="grid gap-2">
-                    <Label for="email">Email address</Label>
-                    <Input id="email" type="email" required :tabindex="2" autocomplete="email" v-model="form.email" placeholder="email@example.com" />
-                    <InputError :message="form.errors.email" />
+            <div>
+                <Label for="email">Email</Label>
+                <div class="mt-2">
+                    <Input
+                        id="email"
+                        v-model="form.email"
+                        type="email"
+                        name="email"
+                        required
+                    />
+                    <InputError :message="errors.email" class="mt-2" />
                 </div>
+            </div>
 
-                <div class="grid gap-2">
-                    <Label for="password">Password</Label>
+            <div>
+                <Label for="password">Mật khẩu</Label>
+                <div class="mt-2">
                     <Input
                         id="password"
-                        type="password"
-                        required
-                        :tabindex="3"
-                        autocomplete="new-password"
                         v-model="form.password"
-                        placeholder="Password"
+                        type="password"
+                        name="password"
+                        required
                     />
-                    <InputError :message="form.errors.password" />
+                    <InputError :message="errors.password" class="mt-2" />
                 </div>
+            </div>
 
-                <div class="grid gap-2">
-                    <Label for="password_confirmation">Confirm password</Label>
+            <div>
+                <Label for="password_confirmation">Xác nhận mật khẩu</Label>
+                <div class="mt-2">
                     <Input
                         id="password_confirmation"
-                        type="password"
-                        required
-                        :tabindex="4"
-                        autocomplete="new-password"
                         v-model="form.password_confirmation"
-                        placeholder="Confirm password"
+                        type="password"
+                        name="password_confirmation"
+                        required
                     />
-                    <InputError :message="form.errors.password_confirmation" />
                 </div>
+            </div>
 
-                <Button type="submit" class="mt-2 w-full" tabindex="5" :disabled="form.processing">
-                    <LoaderCircle v-if="form.processing" class="h-4 w-4 animate-spin" />
-                    Create account
+            <div>
+                <Button
+                    :class="{ 'opacity-25': form.processing }"
+                    :disabled="form.processing"
+                >
+                    Đăng ký
                 </Button>
             </div>
 
-            <div class="text-center text-sm text-muted-foreground">
-                Already have an account?
-                <TextLink :href="route('login')" class="underline underline-offset-4" :tabindex="6">Log in</TextLink>
+            <div class="flex items-center justify-between">
+                <div class="text-sm leading-6">
+                    <TextLink :href="route('login')">
+                        Đã có tài khoản? Đăng nhập
+                    </TextLink>
+                </div>
             </div>
         </form>
-    </AuthBase>
+    </AuthSplitLayout>
 </template>

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Containers\Todo\Data\Factories;
 
 use App\Containers\Todo\Models\Todo;
+use App\Containers\Todo\Enums\TodoStatusEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -26,7 +27,7 @@ class TodoFactory extends Factory
         return [
             'title' => $this->faker->sentence(3),
             'description' => $this->faker->optional()->paragraph(),
-            'is_completed' => false,
+            'status' => TodoStatusEnum::PENDING,
             'completed_at' => null,
         ];
     }
@@ -37,7 +38,7 @@ class TodoFactory extends Factory
     public function completed(): static
     {
         return $this->state(fn (array $attributes) => [
-            'is_completed' => true,
+            'status' => TodoStatusEnum::COMPLETED,
             'completed_at' => $this->faker->dateTimeBetween('-1 month', 'now'),
         ]);
     }
@@ -48,7 +49,18 @@ class TodoFactory extends Factory
     public function incomplete(): static
     {
         return $this->state(fn (array $attributes) => [
-            'is_completed' => false,
+            'status' => TodoStatusEnum::PENDING,
+            'completed_at' => null,
+        ]);
+    }
+
+    /**
+     * State for cancelled todos
+     */
+    public function cancelled(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'status' => TodoStatusEnum::CANCELLED,
             'completed_at' => null,
         ]);
     }

@@ -23,7 +23,7 @@ class HandleInertiaRequests extends Middleware
      *
      * @see https://inertiajs.com/asset-versioning
      */
-    public function version(Request $request): ?string
+    public function version(Request $request): string|null
     {
         return parent::version($request);
     }
@@ -46,11 +46,29 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
-            'ziggy' => [
+            'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
+            'flash' => [
+                'message' => fn () => $request->session()->get('message'),
+                'error' => fn () => $request->session()->get('error'),
+            ],
+            'errors' => function () use ($request) {
+                if (!$request->session()->has('errors')) {
+                    return (object) [];
+                }
+
+                $errors = $request->session()->get('errors')->getBag('default')->getMessages();
+                $formattedErrors = [];
+
+                foreach ($errors as $field => $messages) {
+                    $formattedErrors[$field] = is_array($messages) ? $messages[0] : $messages;
+                }
+
+                return (object) $formattedErrors;
+            },
         ];
     }
 }

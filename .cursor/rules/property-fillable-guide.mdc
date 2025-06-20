@@ -1,0 +1,246 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Using PropertyFillable in Porto Architecture
+
+## Overview
+
+The `PropertyFillable` trait provides a convenient way to fill object properties from an array or collection of data. It's particularly useful in Actions and Tasks when handling request data or transforming data between layers.
+
+## Features
+
+- Automatically maps snake_case keys to camelCase properties
+- Handles Carbon date conversions automatically
+- Validates required properties (throws exception for unset required properties)
+- Works with both arrays and Collections
+
+## Usage Guidelines in Actions
+
+### When to Use in Actions
+
+1. **Data Transformation Actions**
+   ```php
+   use App\Traits\PropertyFillable;
+
+   class TransformUserDataAction extends Action
+   {
+       use PropertyFillable;
+
+       private string $name;
+       private string $email;
+       private ?Carbon $birthDate = null;
+
+       public function run(): array
+       {
+           $this->fillProperties([
+               'name' => 'John Doe',
+               'email' => 'john@example.com',
+               'birth_date' => '1990-01-01'
+           ]);
+
+           return [
+               'name' => $this->name,
+               'email' => $this->email,
+               'birth_date' => $this->birthDate,
+           ];
+       }
+   }
+   ```
+
+2. **Request Data Processing**
+   ```php
+   class CreateUserAction extends Action
+   {
+       use PropertyFillable;
+
+       private string $name;
+       private string $email;
+       private string $password;
+
+       public function __construct(
+           private readonly CreateUserTask $createUserTask,
+       ) {}
+
+       public function run(): User
+       {
+           $this->fillProperties(request()->validated());
+           
+           return $this->createUserTask->run(
+               name: $this->name,
+               email: $this->email,
+               password: $this->password,
+           );
+       }
+   }
+   ```
+
+### When NOT to Use in Actions
+
+1. Simple pass-through actions that don't transform data
+2. Actions that only coordinate tasks without data manipulation
+3. Actions that require complex validation logic (use Form Requests instead)
+
+## Usage Guidelines in Tasks
+
+### When to Use in Tasks
+
+1. **Data Transformation Tasks**
+   ```php
+   class TransformUserDataTask extends Task
+   {
+       use PropertyFillable;
+
+       private string $firstName;
+       private string $lastName;
+
+       public function run(array $userData): array
+       {
+           $this->fillProperties($userData);
+
+           return [
+               'full_name' => $this->firstName . ' ' . $this->lastName,
+           ];
+       }
+   }
+   ```
+
+2. **Database Operations with Multiple Fields**
+   ```php
+   class CreateUserProfileTask extends Task
+   {
+       use PropertyFillable;
+
+       private string $bio;
+       private string $location;
+       private ?string $website = null;
+
+       public function run(User $user): UserProfile
+       {
+           $this->fillProperties(request()->validated());
+
+           return UserProfile::create([
+               'user_id' => $user->id,
+               'bio' => $this->bio,
+               'location' => $this->location,
+               'website' => $this->website,
+           ]);
+       }
+   }
+   ```
+
+### When NOT to Use in Tasks
+
+1. Tasks that perform simple CRUD operations
+2. Tasks that don't require data transformation
+3. Tasks that work with single values or simple data structures
+
+## Best Practices
+
+1. **Property Declaration**
+   - Always declare properties with proper type hints
+   - Use nullable types when appropriate
+   - Set default values for optional properties
+   ```php
+   private string $name;                 // Required
+   private ?string $middleName = null;   // Optional
+   private Carbon $createdAt;            // Date field
+   ```
+
+2. **Error Handling**
+   ```php
+   try {
+       $this->fillProperties($data);
+   } catch (\InvalidArgumentException $e) {
+       // Handle missing required properties
+   }
+   ```
+
+3. **Validation**
+   - Use Form Requests for input validation
+   - Use PropertyFillable for data transformation
+   ```php
+   public function run(): User
+   {
+       // Validation already done by FormRequest
+       $this->fillProperties(request()->validated());
+       // Transform and process data
+   }
+   ```
+
+4. **Documentation**
+   ```php
+   /**
+    * @property string $name Required user name
+    * @property string $email Required email address
+    * @property ?Carbon $birthDate Optional birth date
+    */
+   class UserDataAction extends Action
+   {
+       use PropertyFillable;
+       // ...
+   }
+   ```
+
+## Common Patterns
+
+1. **Request to DTO Transformation**
+   ```php
+   class TransformToUserDtoAction extends Action
+   {
+       use PropertyFillable;
+
+       private string $name;
+       private string $email;
+       private ?string $phone = null;
+
+       public function run(): UserDto
+       {
+           $this->fillProperties(request()->validated());
+
+           return new UserDto(
+               name: $this->name,
+               email: $this->email,
+               phone: $this->phone,
+           );
+       }
+   }
+   ```
+
+2. **Array to Object Mapping**
+   ```php
+   class MapUserDataTask extends Task
+   {
+       use PropertyFillable;
+
+       private string $firstName;
+       private string $lastName;
+       private array $roles = [];
+
+       public function run(array $data): UserViewModel
+       {
+           $this->fillProperties($data);
+
+           return new UserViewModel([
+               'first_name' => $this->firstName,
+               'last_name' => $this->lastName,
+               'roles' => $this->roles,
+           ]);
+       }
+   }
+   ```
+
+## Security Considerations
+
+1. Never use PropertyFillable with unvalidated data
+2. Always declare properties explicitly
+3. Use type hints to prevent type juggling
+4. Be cautious with sensitive data (passwords, tokens, etc.)
+
+## Performance Tips
+
+1. Use PropertyFillable only when necessary
+2. Consider caching reflection results for frequently used classes
+3. Avoid using it in tight loops or performance-critical code
+4. Use simpler alternatives for basic data mapping 

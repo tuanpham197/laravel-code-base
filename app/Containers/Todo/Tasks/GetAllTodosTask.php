@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Containers\Todo\Tasks;
 
 use App\Containers\Todo\Models\Todo;
+use App\Containers\Todo\Enums\TodoStatusEnum;
 use App\Ship\Parents\Tasks\Task;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -15,14 +16,14 @@ use Illuminate\Database\Eloquent\Collection;
  */
 class GetAllTodosTask extends Task
 {
-    private ?bool $completed = null;
+    private ?TodoStatusEnum $status = null;
 
     /**
-     * Set filter for completed status
+     * Set filter for status
      */
-    public function filterByCompleted(bool $completed): self
+    public function filterByStatus(TodoStatusEnum $status): self
     {
-        $this->completed = $completed;
+        $this->status = $status;
 
         return $this;
     }
@@ -36,10 +37,8 @@ class GetAllTodosTask extends Task
     {
         $query = Todo::query();
 
-        if ($this->completed !== null) {
-            $query = $this->completed
-                ? $query->completed()
-                : $query->incomplete();
+        if ($this->status !== null) {
+            $query->where('status', $this->status->value);
         }
 
         return $query->orderBy('created_at', 'desc')->get();
