@@ -1,0 +1,22 @@
+name: Hello World Test
+
+# Allow manual trigger from GitHub UI only
+on:
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Print Hello World
+      run: echo "Hello World!"
+      
+    - name: Print additional info
+      run: |
+        echo "This is a test workflow"
+        echo "Current date: $(date)"
+        echo "Runner OS: ${{ runner.os }}"
