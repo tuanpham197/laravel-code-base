@@ -1,6 +1,6 @@
 name: Hello World Test
 
-# Allow manual trigger from GitHub UI only
+# Allow manual trigger from GitHub UI only 2
 on:
   workflow_dispatch:
 
